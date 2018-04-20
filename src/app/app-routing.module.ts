@@ -1,9 +1,10 @@
 import {NgModule} from '@angular/core';
 import {RouterModule, Routes} from '@angular/router';
-import {PdfViewerComponent} from './pdf-master';
+import {PdfViewerComponent, PdfGenerateComponent} from './pdf-master';
 
 const routes: Routes = [
-  {path: 'viewer', component: PdfViewerComponent}
+  {path: 'viewer', component: PdfViewerComponent},
+  {path: 'generate', component: PdfGenerateComponent}
 ];
 
 @NgModule({

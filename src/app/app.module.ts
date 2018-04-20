@@ -7,14 +7,14 @@ import {FormsModule} from '@angular/forms';
 import {AppComponent} from './app.component';
 import {NavbarComponent} from './layouts';
 import {AppRoutingModule} from './app-routing.module';
-import {PdfViewerComponent} from './pdf-master';
-
+import {PdfGenerateComponent, PdfViewerComponent} from './pdf-master';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
-    PdfViewerComponent
+    PdfViewerComponent,
+    PdfGenerateComponent
   ],
   imports: [
     BrowserModule,

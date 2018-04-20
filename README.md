@@ -9,6 +9,10 @@ npm install ng2-pdf-viewer --save
 npm install bootstrap --save
 npm install jquery --save
 
+#### Generate PDF
+npm install jspdf --save
+npm install @types/jspdf --save-dev
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
