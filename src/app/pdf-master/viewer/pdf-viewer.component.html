@@ -9,10 +9,26 @@
     <input [(ngModel)]="page" type="text" id="page">
   </div>
 
-  <pdf-viewer [src]="pdfSrc"
-              [render-text]="true"
-              [page]="page"
-              [show-all]="false"
-              style="display: block;">
-  </pdf-viewer>
+  <div class="row">
+    <div class="col-md-5">
+      <div class="thumbnail" style="width: 500px; height: 600px;" (click)="onPdfSelected()">
+        <p>click me to view PDF in IFrame!</p>
+        <pdf-viewer [src]="pdfSrc"
+                    [render-text]="true"
+                    [page]="page"
+                    [original-size]="false"
+                    [show-all]="false"
+                    style="display: block;">
+        </pdf-viewer>
+      </div>
+      <br>
+    </div>
+    <div class="col-md-7">
+      <div *ngIf="pdfShow">
+        <h4>PDF in IFrame</h4>
+        <iframe width="800" height="900" [src]="pageUrl" type="application/pdf"></iframe>
+      </div>
+    </div>
+  </div>
+
 </div>

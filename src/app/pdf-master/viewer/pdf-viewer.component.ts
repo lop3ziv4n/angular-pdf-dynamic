@@ -1,4 +1,5 @@
 import {Component, OnInit} from '@angular/core';
+import {DomSanitizer, SafeResourceUrl} from '@angular/platform-browser';
 
 @Component({
   selector: 'app-pdf-viewer',
@@ -9,12 +10,15 @@ export class PdfViewerComponent implements OnInit {
 
   page = 1;
   pdfSrc = '';
+  pageUrl: SafeResourceUrl;
+  pdfShow: boolean;
 
-  constructor() {
+  constructor(private domSanitizer: DomSanitizer) {
   }
 
   ngOnInit() {
     this.pdfSrc = '/assets/demo.pdf';
+    this.pdfShow = false;
   }
 
   onFileSelected() {
@@ -29,5 +33,10 @@ export class PdfViewerComponent implements OnInit {
 
       reader.readAsArrayBuffer(img.files[0]);
     }
+  }
+
+  onPdfSelected() {
+    this.pageUrl = this.domSanitizer.bypassSecurityTrustResourceUrl(this.pdfSrc);
+    this.pdfShow = !this.pdfShow;
   }
 }
