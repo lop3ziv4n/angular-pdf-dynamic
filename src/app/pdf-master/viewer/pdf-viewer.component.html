@@ -1,0 +1,18 @@
+<div class="container">
+
+  <div class="form-group">
+    <label for="file">PDF Select</label>
+    <input (change)="onFileSelected()" type="file" id="file">
+  </div>
+  <div class="form-group">
+    <label for="page">Page</label>
+    <input [(ngModel)]="page" type="text" id="page">
+  </div>
+
+  <pdf-viewer [src]="pdfSrc"
+              [render-text]="true"
+              [page]="page"
+              [show-all]="false"
+              style="display: block;">
+  </pdf-viewer>
+</div>
